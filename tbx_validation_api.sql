@@ -25,7 +25,8 @@ CREATE TABLE IF NOT EXISTS "dialects_modules" (
 	"dialects_id"	integer NOT NULL,
 	"modules_id"	integer NOT NULL,
 	FOREIGN KEY("modules_id") REFERENCES "modules"("id"),
-	FOREIGN KEY("dialects_id") REFERENCES "dialects"("id")
+	FOREIGN KEY("dialects_id") REFERENCES "dialects"("id"),
+	PRIMARY KEY("dialects_id","modules_id")
 );
 INSERT INTO "dialects" ("id","name","definition","dca_rng","dca_sch","dct_nvdl","dct_sch") VALUES (1,'TBX-Min','https://github.com/LTAC-Global/TBX-Min_dialect/blob/master/TBX-Min%20Definition.pdf','https://raw.githubusercontent.com/LTAC-Global/TBX-Min_dialect/master/DCA/TBXcoreStructV03_TBX-Min_integrated.rng','https://raw.githubusercontent.com/LTAC-Global/TBX-Min_dialect/master/DCA/TBX-Min_DCA.sch','https://raw.githubusercontent.com/LTAC-Global/TBX-Min_dialect/master/DCT/TBX-Min.nvdl','https://raw.githubusercontent.com/LTAC-Global/TBX-Min_dialect/master/DCT/TBX-Min_DCT.sch');
 INSERT INTO "dialects" ("id","name","definition","dca_rng","dca_sch","dct_nvdl","dct_sch") VALUES (2,'TBX-Basic','https://github.com/LTAC-Global/TBX-Basic_dialect/blob/master/TBX-Basic%20Definition.pdf','https://raw.githubusercontent.com/LTAC-Global/TBX-Basic_dialect/master/DCA/TBXcoreStructV03_TBX-Basic_integrated.rng','https://raw.githubusercontent.com/LTAC-Global/TBX-Basic_dialect/master/DCA/TBX-Basic_DCA.sch','https://raw.githubusercontent.com/LTAC-Global/TBX-Basic_dialect/master/DCT/TBX-Basic.nvdl','https://raw.githubusercontent.com/LTAC-Global/TBX-Basic_dialect/master/DCT/TBX-Basic_DCT.sch');
